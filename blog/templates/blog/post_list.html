@@ -6,15 +6,13 @@
         <div>
             <h1><a href="">Vova's Blog</a> </h1>
         </div>
-        <div>
-            <p>published: 25.07.2020, 12:00</p>
-            <h2><a href="">My first blog!</a> </h2>
-            <p>Python's convenience has made it the most popular language for machine learning and artificial intelligence. Python's flexibility has allowed Anyscale to make ML/AI scalable from laptops to clusters.</p>
-        </div>
-        <div>
-            <p>published: 26.07.2020, 12:00</p>
-            <h2><a href="">My second blog!</a> </h2>
-            <p>The mission of the Python Software Foundation is to promote, protect, and advance the Python programming language, and to support and facilitate the growth of a diverse and international community of Python programmers. </p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published:{{post.published_date}}</p>
+                <h2><a href="">{{post.title}}</a> </h2>
+                <p>{{post.text|linebreaksbr}}</p>
+            </div>
+        {% endfor %}
+
     </body>
 </html>
